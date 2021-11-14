@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    width: 980px;
+    min-height: 300px;
+    margin: 20px 0 0 20px;
+    padding: 20px 0 0 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: lightskyblue;
+}
+
+#left-chunk {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group input{
+    margin:8px 0 0 35px;
+}
+
+.btn-pos-adj {
+    margin: 10px 0 0 90px;
+}
+
+#right-chunk {
+    width: 350px;
+}
