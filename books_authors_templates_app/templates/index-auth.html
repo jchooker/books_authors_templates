@@ -17,24 +17,26 @@
                 {% csrf_token %}
                 <div class="input-area">
                     <div class="input-group form-group row">
-                        <label for="book_title" class="col-sm-2 col-form-label">First Name</label>
+                        <label for="first_name" class="col-sm-2 col-form-label">First Name</label>
                         <div class="col-sm-10">
-                            <input type="text" name="book_title" id="book_title">
+                            <input type="text" name="first_name" id="first_name">
                         </div>
                     </div>
                     <div class="input-group form-group row">
-                        <label for="book_title" class="col-sm-2 col-form-label">Last Name</label>
+                        <label for="last_name" class="col-sm-2 col-form-label">Last Name</label>
                         <div class="col-sm-10">
-                            <input type="text" name="book_title" id="book_title">
+                            <input type="text" name="last_name" id="last_name">
                         </div>
                     </div>
                     <div class="input-group form-group row">
-                        <label for="book_desc" class="col-sm-2 col-form-label">Notes</label>
+                        <label for="notes" class="col-sm-2 col-form-label">Notes</label>
                         <div class="col-sm-10">
-                            <input type="text" name="book_desc" id="book_desc">
+                            <input type="text" name="notes" id="notes">
                         </div>
                     </div>
                 </div>
+                <button class="btn btn-primary">Add</button>
+                </form>
         </div>
         <div id="right-chunk">
             <table class="table">
@@ -50,18 +52,8 @@
                     <tr>
                         <th scope="row">{{author.id}}</th>
                         <td>{{author.first_name}} {{author.last_name}}</td>
-                        <td><a href="#">View</a></td>
+                        <td><a href="/view-author/{{author.id}}">View</a></td>
                     </tr>
-                    <!-- <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                    </tr> -->
                     {% endfor %}
                 </tbody>
             </table>

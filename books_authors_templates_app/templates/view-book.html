@@ -23,6 +23,13 @@
             </select>
             <button class="btn btn-primary">Add</button>
         </form>
+        <p>Authors: </p>
+        <ul>
+            {% for author in book.authors.all %}
+            <li>{{author.first_name}} {{author.last_name}}</li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="btn btn-secondary">Return to Home Page</a>
     </div>
 </body>
 </html>

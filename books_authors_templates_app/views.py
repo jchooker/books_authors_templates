@@ -18,10 +18,13 @@ def createAuthor(request):
         last_name=request.POST['last_name'], 
         notes=request.POST['notes']
     )
-    return redirect('/')
+    return redirect('/addAuthor')
 
 def addAuthor(request):
-    return render(request, 'add-author-test.html')
+    context = {
+        'authors':Author.objects.all()
+    }
+    return render(request, 'index-auth.html', context)
 
 def view_book(request, id):
     context = {
@@ -30,9 +33,26 @@ def view_book(request, id):
     }
     return render(request, "view-book.html", context)
 
+def view_author(request, id):
+    print(request.build_absolute_uri())
+    context = {
+        'books':Book.objects.all(),
+        'author':Author.objects.get(id=id)
+    }
+    return render(request, "view-author.html", context)
+
+
 def createRel(request, id):
-    book = Book.objects.get(id=id)
-    authorID = request.POST['authors']
-    author=Author.objects.get(id=authorID)
-    book.authors.add(author)
-    return redirect('/')
+    test_pg = request.build_absolute_uri()
+    if "author" in test_pg:
+        book = Book.objects.get(id=id)
+        authorID = request.POST['authors']
+        author=Author.objects.get(id=authorID)
+        book.authors.add(author)
+        return redirect(f'/view-book/{id}')
+    else:
+        author = Author.objects.get(id=id)
+        bookID = request.POST['books']
+        book=Book.objects.get(id=bookID)
+        author.books.add(book)
+        return redirect(f'/view-author/{id}')

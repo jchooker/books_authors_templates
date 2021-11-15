@@ -12,7 +12,8 @@
     border-radius: 5px;
     display: flex;
     justify-content: space-evenly;
-    flex-direction: column;
+    align-items: center;
+    /* flex-direction: column; */
     background-color: lightskyblue;
 }
 
@@ -23,12 +24,22 @@
     align-items: center;
 }
 
+#entry-area {
+    display: block;
+    /* justify-content: space-between;
+    flex-direction: column; */
+}
+
 .input-group input{
     margin:8px 0 0 35px;
 }
 
 .btn-pos-adj {
     margin: 10px 0 0 90px;
+}
+
+#txt-area-shift textarea {
+    margin: 0 0 0 50px;
 }
 
 #right-chunk {
