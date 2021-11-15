@@ -11,7 +11,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <div id="left-chunk">
+        <div id="left-chunk" class="left-chunk-ht">
             <h1>Add an Author</h1>
             <form action="/createAuthor" method='POST'>
                 {% csrf_token %}
@@ -30,8 +30,8 @@
                     </div>
                     <div class="input-group form-group row">
                         <label for="notes" class="col-sm-2 col-form-label">Notes</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="notes" id="notes">
+                        <div class="col-sm-10" id="txt-area-shift">
+                            <textarea type="text" name="notes" id="notes"></textarea>
                         </div>
                     </div>
                 </div>
@@ -57,6 +57,7 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <a href="/" class="btn btn-secondary">Go to add book page</a>
         </div>
     </div>
 </body>
